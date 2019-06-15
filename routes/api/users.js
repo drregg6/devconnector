@@ -4,6 +4,8 @@ const gravatar = require('gravatar');
 const bcrypt = require('bcryptjs');
 const User = require('../../models/User');
 const { check, validationResult } = require('express-validator/check');
+const jwt = require('jsonwebtoken');
+const config = require('config');
 
 // @route  Post api/users
 // @desc   Register user
@@ -50,9 +52,20 @@ async (req, res) => {
     // Save user into database
     await user.save()
     // Return jsonwebtoken
-
-    res.send('User registered')
-
+    const payload = {
+      user: {
+        id: user.id // mongoose ignores the underscore in mongodb
+      }
+    }
+    jwt.sign(
+      payload,
+      config.get('jwtSecret'),
+      { expiresIn: 3600 },
+      (err, token) => {
+        if (err) throw error;
+        res.json({ token });
+      }
+    )
   } catch(err) {
     console.error(err.message);
     res.status(500).send('Server error');
