@@ -28,9 +28,6 @@ const Login = ({ login, isAuthenticated }) => {
 
   return (
     <React.Fragment>
-      <div className="alert alert-danger">
-        Invalid credentials
-      </div>
       <h1 className="large text-primary">Sign In</h1>
       <p className="lead"><i className="fas fa-user"></i> Sign into Your Account</p>
       <form className="form" action="dashboard.html" onSubmit={e => onSubmit(e)}>
