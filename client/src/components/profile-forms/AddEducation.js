@@ -99,7 +99,7 @@ const AddEducation = ({ addEducation, history }) => {
             }
             type="checkbox"
             name="current"
-          />{' '}Current Job</p>
+          />{' '}Current School</p>
         </div>
         <div className="form-group">
           <h4>To Date</h4>
