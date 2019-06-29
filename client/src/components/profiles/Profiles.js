@@ -13,7 +13,7 @@ const Profiles = ({
 }) => {
   useEffect(() => {
     getProfiles();
-  }, []); // run once, empty brackets, or run on each state change
+  }, [getProfiles]); // run once, empty brackets, or run on each state change
   return (
     <Fragment>
       { loading ? <Spinner /> : <Fragment>
