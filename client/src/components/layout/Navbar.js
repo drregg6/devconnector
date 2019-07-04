@@ -9,11 +9,16 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <ul>
       <li>
-      <li>
         <Link to="/profiles">
           Developers
         </Link>
       </li>
+      <li>
+        <Link to="/posts">
+          Posts
+        </Link>
+      </li>
+      <li>
         <Link to="/dashboard">
           <i className="fas da-user" />{' '}
           <span className="hide-sm">Dashboard</span>
