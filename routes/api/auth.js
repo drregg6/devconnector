@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 // const config = require('config');
 const bcrypt = require('bcryptjs');
 const { check, validationResult } = require('express-validator/check');
+require('dotenv').config();
 
 // @route  GET api/auth
 // @desc   Test route
